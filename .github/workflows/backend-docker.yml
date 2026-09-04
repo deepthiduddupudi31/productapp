@@ -19,17 +19,17 @@ jobs:
       - name: Login to Azure Container Registry
         uses: docker/login-action@v3
         with:
-          registry: prodcontainer-b6a9dycma5d8dpeg.azurecr.io
+          registry: prodcontainer-b6a9dycma5d8dpeq.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build Docker image
         run: |
           docker build \
-            -t prodcontainer-b6a9dycma5d8dpeg.azurecr.io/producthub-backend:latest \
+            -t prodcontainer-b6a9dycma5d8dpeq.azurecr.io/producthub-backend:latest \
             ./backend
 
       - name: Push Docker image
         run: |
           docker push \
-            prodcontainer-b6a9dycma5d8dpeg.azurecr.io/producthub-backend:latest
+            prodcontainer-b6a9dycma5d8dpeq.azurecr.io/producthub-backend:latest
